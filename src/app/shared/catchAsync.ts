@@ -9,7 +9,7 @@ export const cashAsync = (fn: RequestHandler) => {
             res.status(400).json({
                 success: false,
                 status: "error",
-                message: "Something went wrong",
+                message: error.message,
             })
         }
     }

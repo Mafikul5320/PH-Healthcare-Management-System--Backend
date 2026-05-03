@@ -20,7 +20,7 @@ const registerPatient = async (payload: IAuth) => {
         })
         return patientTx
     })
-    return patient
+    return { ...data, patient }
 };
 
 const signIn = async (payload: ISignIn) => {

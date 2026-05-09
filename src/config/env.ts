@@ -11,6 +11,21 @@ interface EnvConfig {
 }
 
 const LoadEnv = (): EnvConfig => {
+
+    const requireEnv = [
+        "DATABASE_URL",
+        "APP_URL",
+        "PORT",
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL"
+    ];
+    requireEnv.forEach((variable) => {
+        if (!process.env[variable]) {
+            throw new Error("Enviroment variable is require!!")
+        }
+    })
+
+
     return {
         DATABASE_URL: process.env.DATABASE_URL as string,
         APP_URL: process.env.APP_URL as string,

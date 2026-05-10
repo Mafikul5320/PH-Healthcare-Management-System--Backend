@@ -3,6 +3,7 @@ import cors from 'cors'
 import { indexRoutes } from './routes'
 import { EnvVars } from '../config/env'
 import { NotFound } from './middleware/NotFound'
+import { GlobalErrorHandler } from './middleware/GlobalErrorHandler'
 
 
 const app: Application = express()
@@ -17,6 +18,7 @@ app.get('/', (req, res) => {
     res.send('Hello Good Night!')
 })
 
-app.use(NotFound)
+app.use(NotFound);
+app.use(GlobalErrorHandler);
 
 export default app;

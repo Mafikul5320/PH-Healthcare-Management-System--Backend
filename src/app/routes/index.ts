@@ -8,4 +8,4 @@ const router: Router = express.Router();
 router.use('/specialty', SpecialtyRouters)
 router.use("/auth", AuthRouters)
 router.use("/auth", AuthRouters)
-export const indexRoutes = router
+export const indexRoutes = router;

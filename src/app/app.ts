@@ -3,7 +3,8 @@ import cors from 'cors'
 import { indexRoutes } from './routes'
 import { EnvVars } from '../config/env'
 import { NotFound } from './middleware/NotFound'
-import { GlobalErrorHandler } from './middleware/GlobalErrorHandler'
+import { GlobalErrorHandler } from './middleware/globalErrorHandler'
+
 
 
 const app: Application = express()
